@@ -1,21 +1,21 @@
+// allover
 let age = document.getElementById("age");
 let results = document.getElementById("results");
 let submitBtn = document.getElementById("submitBtn");
 
+// For Name Input & Playback 
 let nameInput = document.getElementById("name");
 let submitBtn1 = document.getElementById("submitBtn1");
 let speakingName = document.getElementById("speakingName");
-
 submitBtn1.addEventListener("click", () => {
     speakingName.innerText = `Hola! "${nameInput.value}"`; 
     let utterance = new SpeechSynthesisUtterance(`Welcome ${nameInput.value} to Age Verification Portal`);
     speechSynthesis.speak(utterance);
-
 });
 
+// For Age Input & Playback
 submitBtn.addEventListener("click", () => {
     console.log();
-
 if (age.value >= 21) {
     results.innerText = `Congrats! You're ${age.value}, You Can Marry`;
     results.style.color = "green";
@@ -31,7 +31,7 @@ speechSynthesis.speak(utterance);
 }
 })
 
-
+// Submit Button logic to avoid click
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("submitBtn");
   const container = document.querySelector(".form");
@@ -57,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     button.style.left = `${newX}px`;
     // button.style.top = `${newY}px`;
   });
-
-  // Optional: Add a click listener to show a message if the user succeeds
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -86,6 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
     button.style.left = `${newX}px`;
     // button.style.top = `${newY}px`;
   });
-
-  // Optional: Add a click listener to show a message if the user succeeds
 });
